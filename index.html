@@ -4,6 +4,12 @@
     <title>Md Preview</title>
 </head>
 <body>
+
+    <form>
+        <input id="textUrl" type="text" placeholder="markdown file url" />
+        <input id="buttonSubmit" type="submit" value="Preview"/>
+    </form>
+
     <div id="preview">
     </div>
 
@@ -11,7 +17,15 @@
     <script src="node_modules/markdown/lib/markdown.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#preview").html("lolo");
+
+            $("#buttonSubmit").click(function(e){
+                e.preventDefault();
+
+                var markdownUrl = $("#textUrl").val();
+
+                var renderedHtml = markdown.toHTML(markdownUrl);
+                $("#preview").html(renderedHtml);
+            });
         });
     </script>
 </body>
