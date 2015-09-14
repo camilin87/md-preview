@@ -22,7 +22,10 @@
                 e.preventDefault();
 
                 var markdownUrl = $("#textUrl").val();
+                renderMarkdown(markdownUrl);
+            });
 
+            function renderMarkdown(markdownUrl){
                 $("#preview").html("downloading...");
                 $.get(markdownUrl, function(data){
                     var renderedHtml = markdown.toHTML(data);
@@ -31,7 +34,7 @@
                 .fail(function(){
                     $("#preview").html("error");  
                 });
-            });
+            }
         });
     </script>
 </body>
