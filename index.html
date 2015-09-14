@@ -20,11 +20,17 @@
 
             $("#buttonSubmit").click(function(e){
                 e.preventDefault();
+                $("#preview").html("");
 
                 var markdownUrl = $("#textUrl").val();
 
-                var renderedHtml = markdown.toHTML(markdownUrl);
-                $("#preview").html(renderedHtml);
+                $.get(markdownUrl, function(data){
+                    var renderedHtml = markdown.toHTML(data);
+                    $("#preview").html(renderedHtml);
+                })
+                .fail(function(){
+                    $("#preview").html("error");  
+                });
             });
         });
     </script>
