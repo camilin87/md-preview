@@ -3,7 +3,7 @@ Preview any markdown link as a nice html page.
 
 ##Usage
 
-http://localhost:8000/?u=https://raw.githubusercontent.com/tddapps/blog/gh-pages/readme.md
+http://tddapps.github.io/md-preview/?u=https://raw.githubusercontent.com/tddapps/blog/gh-pages/readme.md
 
 ##Development
 
