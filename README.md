@@ -8,3 +8,6 @@ http://localhost:8000/?u=https://raw.githubusercontent.com/tddapps/blog/gh-pages
 ##Development
 
     rake dev
+
+###Dependencies
+[Markdown](https://www.npmjs.com/package/markdown)
